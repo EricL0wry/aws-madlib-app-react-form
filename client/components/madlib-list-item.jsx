@@ -8,7 +8,7 @@ export default function MadlibListItem(props) {
       <button
         type="button"
         className="btn select-button"
-        onClick={() => props.setView('form', { madLibId })}
+        onClick={() => props.setView('madlibForm', { id: madLibId })}
       >
         Select
       </button>
