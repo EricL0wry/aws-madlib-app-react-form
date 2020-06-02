@@ -13,6 +13,7 @@ body{
   color: #DEF2F1;
 }
 
+.submit-button,
 .select-button{
   background-color: #2B7A78;
   color: #17252A;
