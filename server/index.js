@@ -19,6 +19,17 @@ app.get('/api/madlibs', (req, res) => {
     });
 });
 
+app.get('/api/madlib/:madlibId', (req, res) => {
+  const id = req.params.madlibId;
+  fetch(`https://rq44dndifg.execute-api.us-east-1.amazonaws.com/dev/get-madlib/${id}`)
+    .then(response => response.json())
+    .then(madlib => res.json(madlib))
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred' });
+    });
+});
+
 app.listen(process.env.PORT, () => {
   // eslint-disable-next-line no-console
   console.log('Listening on port', process.env.PORT);
