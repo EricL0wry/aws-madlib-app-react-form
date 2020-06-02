@@ -1,6 +1,7 @@
 import React from 'react';
 import MadlibList from './madlib-list';
 import Header from './header';
+import MadlibForm from './madlib-form';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,9 +20,11 @@ export default class App extends React.Component {
 
   render() {
     const { name, params } = this.state.view;
-    const list = <MadlibList setState={this.setView}/>;
+    const list = <MadlibList setView={this.setView}/>;
+    const form = <MadlibForm setView={this.setView} params={params}/>;
     let view;
     if (name === 'madlibList') view = list;
+    if (name === 'madlibForm') view = form;
     return (
       <div className="wrapper">
         <Header />
