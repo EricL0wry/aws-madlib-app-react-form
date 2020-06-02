@@ -69,19 +69,38 @@ export default class MadlibForm extends React.Component {
         formItems.push(formItem);
       }
     }
+    if (this.state.madlib === null) {
+      return (
+        <div className="row justify-content-center mt-3">
+          <h2>Loading...</h2>
+        </div >
+      );
+    }
     return (
-      <div className="container">
-        <form className="row">
+      <div className="container d-flex flex-column align-items-center">
+        <form className="row col-sm-12 col-md-12 col-lg-10 col-xl-8">
           <div className="form-group col-12">
-            <label htmlFor="userName">Your Name</label>
+            <label htmlFor="userName" className="label">Your Name</label>
             <input type="text" className="form-control" id="userName" onChange={this.handleChange}/>
           </div>
           {formItems}
         </form>
-        <div className="row">
+        <div className="row justify-content-center mt-2">
+          <h6 className="invalid mt-2">{this.state.isComplete === false ? 'Please fill out all fields and try again' : ''}</h6>
+        </div>
+        <div className="row justify-content-center my-3">
           <button
             type="button"
-            className="btn submit-button"
+            className="btn submit-button mx-3"
+            onClick={() => {
+              this.props.setView('madlibList', {});
+            }}
+          >
+            Go Back
+          </button>
+          <button
+            type="button"
+            className="btn submit-button mx-3"
             onClick={this.validateInputs}
           >
             Submit!

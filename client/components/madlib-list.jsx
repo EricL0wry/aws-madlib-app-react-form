@@ -35,12 +35,16 @@ export default class MadlibList extends React.Component {
     }
 
     if (!items) {
-      return '';
+      return (
+        <div className="row justify-content-center mt-3">
+          <h2>Loading...</h2>
+        </div >
+      );
     }
 
     return (
       <div className="container d-flex flex-column align-items-center mt-3">
-        <div className="row flex-column align-items-center">
+        <div className="row flex-column align-items-center pb-3 mb-3">
           <h2 className="text-center">Welcome to Dial-A-MadLib</h2>
           <h3 className="text-center">Select a subject below to get started</h3>
         </div>
