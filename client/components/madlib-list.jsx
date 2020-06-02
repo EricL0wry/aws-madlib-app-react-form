@@ -33,14 +33,19 @@ export default class MadlibList extends React.Component {
         />;
       });
     }
+
+    if (!items) {
+      return '';
+    }
+
     return (
-      <div className="container px-0 mt-3">
-        <div className="row">
-          <h1 className="col-12">Welcome to Dial-A-Madlib</h1>
-          <h2 className="col-12">Select a Madlib below to get started</h2>
+      <div className="container d-flex flex-column align-items-center mt-3">
+        <div className="row flex-column align-items-center">
+          <h2 className="text-center">Welcome to Dial-A-MadLib</h2>
+          <h3 className="text-center">Select a subject below to get started</h3>
         </div>
-        <div className="row">
-          {items || ''}
+        <div className="row flex-column align-items-center my-3 list-container p-3">
+          {items}
         </div>
       </div>
 

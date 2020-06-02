@@ -61,7 +61,7 @@ export default class FormSubmit extends React.Component {
           <h2 className="numbers">{userPin}</h2>
           <h3>Please call:</h3>
           <h2 className="numbers">{phoneNumber}</h2>
-          <h3>to hear your Madlib</h3>
+          <h3>to hear your MadLib</h3>
         </div>
       );
     }

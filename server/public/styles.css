@@ -13,6 +13,12 @@ body{
   color: #DEF2F1;
 }
 
+.list-container{
+  background-color: #DEF2F1;
+  border-radius: 5px;
+  color: #17252A;
+}
+
 .back-button,
 .submit-button,
 .select-button{
