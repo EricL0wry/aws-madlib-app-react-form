@@ -41,7 +41,10 @@ app.post('/api/submit-madlib', (req, res) => {
 
   fetch('https://rq44dndifg.execute-api.us-east-1.amazonaws.com/dev/submit-madlib', params)
     .then(response => response.json())
-    .then(data => res.json(data))
+    .then(data => {
+      data.phoneNumber = process.env.PHONE_NUMBER;
+      res.json(data);
+    })
     .catch(err => {
       console.error(err);
       res.status(500).json({ error: 'An unexpected error occurred' });

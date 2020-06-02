@@ -13,8 +13,18 @@ body{
   color: #DEF2F1;
 }
 
+.back-button,
 .submit-button,
 .select-button{
   background-color: #2B7A78;
+  color: #17252A;
+}
+
+.success{
+  background-color: #2B7A78;
+  color: #DEF2F1;
+}
+
+.numbers{
   color: #17252A;
 }
