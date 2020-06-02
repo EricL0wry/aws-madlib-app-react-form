@@ -30,6 +30,27 @@ app.get('/api/madlib/:madlibId', (req, res) => {
     });
 });
 
+app.post('/api/submit-madlib', (req, res) => {
+  const params = {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(req.body)
+  };
+
+  fetch('https://rq44dndifg.execute-api.us-east-1.amazonaws.com/dev/submit-madlib', params)
+    .then(response => response.json())
+    .then(data => {
+      data.phoneNumber = process.env.PHONE_NUMBER;
+      res.json(data);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred' });
+    });
+});
+
 app.listen(process.env.PORT, () => {
   // eslint-disable-next-line no-console
   console.log('Listening on port', process.env.PORT);
