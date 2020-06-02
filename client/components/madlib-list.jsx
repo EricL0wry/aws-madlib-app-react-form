@@ -1,4 +1,5 @@
 import React from 'react';
+import MadlibListItem from './madlib-list-item';
 
 export default class MadlibList extends React.Component {
   constructor(props) {
@@ -22,8 +23,27 @@ export default class MadlibList extends React.Component {
   }
 
   render() {
+    let items;
+    if (this.state.madlibs.length) {
+      items = this.state.madlibs.map(madlib => {
+        return <MadlibListItem
+          key={madlib.madLibId}
+          madlib={madlib}
+          setView={this.props.setView}
+        />;
+      });
+    }
     return (
-      <h1>Madlib List</h1>
+      <div className="container px-0 mt-3">
+        <div className="row">
+          <h1 className="col-12">Welcome to Dial-A-Madlib</h1>
+          <h2 className="col-12">Select a Madlib below to get started</h2>
+        </div>
+        <div className="row">
+          {items || ''}
+        </div>
+      </div>
+
     );
   }
 }
