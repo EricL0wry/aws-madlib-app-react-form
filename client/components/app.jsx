@@ -31,7 +31,7 @@ export default class App extends React.Component {
     return (
       <div className="wrapper">
         <Header />
-        <div className="container">
+        <div className="container pt-3">
           {view}
         </div>
       </div>
