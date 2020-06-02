@@ -4,7 +4,7 @@ export default class MadlibList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      madlibs: {}
+      madlibs: []
     };
   }
 
