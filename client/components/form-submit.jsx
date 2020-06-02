@@ -9,7 +9,20 @@ export default class FormSubmit extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.params);
+
+    const params = {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.props.params)
+    };
+
+    fetch('api/submit-madlib', params)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      });
   }
 
   render() {
