@@ -5,7 +5,9 @@ function Header(props) {
   return (
     <nav className="navbar header">
       <div className="container">
-        <span className="navbar-brand mb-0 h1">Dial-A-Madlib</span>
+        <div className="row justify-content-center col-12">
+          <span className="navbar-brand mb-0 h1"><i className="fas fa-mobile-alt"></i>  Dial-A-Madlib!</span>
+        </div>
       </div>
     </nav>
   );
